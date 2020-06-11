@@ -65,7 +65,7 @@ int main(int argc, char const *argv[])
 {
   
    //char s[9] = {'a','b','c','a','b','c','b','b'};
-   char s[9] = {'a','b','c','a','d','f','b','b'};
+   char s[10] = {'a','b','c','a','d','d','f','b','b'};
   
    int res = lengthOfLongestSubstring2(s);
 
