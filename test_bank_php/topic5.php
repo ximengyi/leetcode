@@ -1,109 +1,69 @@
 <?php
 
 $s = "babadada";
-//  function is_palindrome($s){
-//      var_dump($s);
-//      $count = strlen($s);
-//      $len = $count/2;
-//      for ($i =0;$i < $len;$i++){
-//           $count--;
-//           if($s[$i] != $s[$count]){
-//
-//            return false;
-//           }
-//
-//      }
-//        return true;
-//
-//  }
-//
-//
-//function longestPalindrome($s) {
-//
-//      if(is_palindrome($s)){
-//          return $s;
-//      }
-//
-//       $longest_arr = [];
-//       $start = 0;
-//       $max = 0;
-//       $max_str =$s[0];
-//    for ($i=0;isset($s[$i]);$i++){
-//        if(isset($longest_arr[ord($s[$i])])){
-//         $start = $longest_arr[ord($s[$i])];
-//         $len = $i -$start + 1;
-//         $temp_str = substr($s,$start,$len);
-//         if(is_palindrome($temp_str)){
-//
-//             if($max < $len){
-//                 $max = $len;
-//                 $max_str = $temp_str;
-//             }
-//
-//         }else{
-//             $start = $i;
-//         }
-//
-//        }
-//            $longest_arr[ord($s[$i])] = $i;
-//
-//    }
-//  //  echo $max;
-//    echo $max_str;
-//}
-//
-//longestPalindrome($s);
-////$s = 'badfabad';
-////longestPalindrome($s);
-// //echo substr($s,0,1);
-////is_palindrome($a);
-///
-/// //"aaaabbbbbbbbbbccccccccccddddddddddeeeeeeeeeeffffffffffgggggggggghhhhhhhhhhiiiiiiiiiijjjjjjjjjjkkkkkkkkkkllllllllllmmmmmmmmmmnnnnnnnnnnooooooooooppppppppppqqqqqqqqqqrrrrrrrrrrssssssssssttttttttttuuuuuuuuuuvvvvvvvvvvwwwwwwwwwwxxxxxxxxxxyyyyyyyyyyzzzzzzzzzzyyyyyyyyyyxxxxxxxxxxwwwwwwwwwwvvvvvvvvvvuuuuuuuuuuttttttttttssssssssssrrrrrrrrrrqqqqqqqqqqppppppppppoooooooooonnnnnnnnnnmmmmmmmmmmllllllllllkkkkkkkkkkjjjjjjjjjjiiiiiiiiiihhhhhhhhhhggggggggggffffffffffeeeeeeeeeeddddddddddccccccccccbbbbbbbbbbaaaaaaaabbbbbbbbbbccccccccccddddddddddeeeeeeeeeeffffffffffgggggggggghhhhhhhhhhiiiiiiiiiijjjjjjjjjjkkkkkkkkkkllllllllllmmmmmmmmmmnnnnnnnnnnooooooooooppppppppppqqqqqqqqqqrrrrrrrrrrssssssssssttttttttttuuuuuuuuuuvvvvvvvvvvwwwwwwwwwwxxxxxxxxxxyyyyyyyyyyzzzzzzzzzzyyyyyyyyyyxxxxxxxxxxwwwwwwwwwwvvvvvvvvvvuuuuuuuuuuttttttttttssssssssssrrrrrrrrrrqqqqqqqqqqppppppppppoooooooooonnnnnnnnnnmmmmmmmmmmllllllllllkkkkkkkkkkjjjjjjjjjjiiiiiiiiiihhhhhhhhhhggggggggggffffffffffeeeeeeeeeeddddddddddccccccccccbbbbbbbbbbaaaa"
-$s ="sooos";
-function test($s)
-{
-    $max_str = '';
-    $max = 0;
-    for ($i = 0; isset($s[$i]); $i++) {
-        if ($i < 2) {
-            $max = $i;
-            $max_str = $s[0];
+//$s ="aaaabbbbbbbbbbccccccccccddddddddddeeeeeeeeeeffffffffffgggggggggghhhhhhhhhhiiiiiiiiiijjjjjjjjjjkkkkkkkkkkllllllllllmmmmmmmmmmnnnnnnnnnnooooooooooppppppppppqqqqqqqqqqrrrrrrrrrrssssssssssttttttttttuuuuuuuuuuvvvvvvvvvvwwwwwwwwwwxxxxxxxxxxyyyyyyyyyyzzzzzzzzzzyyyyyyyyyyxxxxxxxxxxwwwwwwwwwwvvvvvvvvvvuuuuuuuuuuttttttttttssssssssssrrrrrrrrrrqqqqqqqqqqppppppppppoooooooooonnnnnnnnnnmmmmmmmmmmllllllllllkkkkkkkkkkjjjjjjjjjjiiiiiiiiiihhhhhhhhhhggggggggggffffffffffeeeeeeeeeeddddddddddccccccccccbbbbbbbbbbaaaaaaaabbbbbbbbbbccccccccccddddddddddeeeeeeeeeeffffffffffgggggggggghhhhhhhhhhiiiiiiiiiijjjjjjjjjjkkkkkkkkkkllllllllllmmmmmmmmmmnnnnnnnnnnooooooooooppppppppppqqqqqqqqqqrrrrrrrrrrssssssssssttttttttttuuuuuuuuuuvvvvvvvvvvwwwwwwwwwwxxxxxxxxxxyyyyyyyyyyzzzzzzzzzzyyyyyyyyyyxxxxxxxxxxwwwwwwwwwwvvvvvvvvvvuuuuuuuuuuttttttttttssssssssssrrrrrrrrrrqqqqqqqqqqppppppppppoooooooooonnnnnnnnnnmmmmmmmmmmllllllllllkkkkkkkkkkjjjjjjjjjjiiiiiiiiiihhhhhhhhhhggggggggggffffffffffeeeeeeeeeeddddddddddccccccccccbbbbbbbbbbaaaa";
+//$s ="ssooosod";
+$s = 'ac';
+//dsoooosf
 
-        }
-        $left = $i - 1;
-        $right = $i + 1;
-        if ($s[$i] == $s[$left] && ($s[$i]!=$s[$right])) {
-            $right = $i;
+function is_huiwen($s,$left,$right){
+     $max = 0;
+     $start = 0;
+    while ($left >= 0 && isset($s[$right])) {
 
-        }
-        while (isset($s[$left]) && isset($s[$right])) {
-
-            if ($s[$left] == $s[$right]) {
-                $len = $right - $left + 1;
-                $temp_str = substr($s, $left, $len);
-                if ($max < $len) {
-                    $max = $len;
-                    $max_str = $temp_str;
-                }
-                $left--;
-                $right++;
-            } else {
-                break;
-            }
-
-            if ($left < 0) {
-                $left = 0;
-                if($s[$left] !=$s[$i]){
-                    break;
-                }
+        if ($s[$left] == $s[$right]) {
+            $len = $right - $left + 1;
+            if ($max < $len) {
+                $max = $len;
+                $start = $left;
 
             }
-
+            $left--;
+            $right++;
+        } else {
+            break;
         }
     }
-    var_dump($max_str);
+    $max_str = substr($s,$start,$max);
+    echo "====start==={$start}===max====$max=====str={$max_str}===\n";
+    return [$start,$max];
 }
 
-//echo $s[-1];
+$s ='acbf';
+function test($s)
+{
+    $start = 0;
+    $max = 0;
+    $max_str ='';
+    for ($i = 1; isset($s[$i]); $i++) {
+        $left = $i - 1;
+        if ($s[$i]  == $s[$left]) {
+             $right = $i;
+             $res = is_huiwen($s,$left,$right);
+             if($max < $res[1]){
+                 $max =$res[1];
+                 $start = $res[0];
+              }
+            }
+
+        $right = $i+1;
+       $res = is_huiwen($s,$left,$right);
+
+       if($max < $res[1]){
+           $max =$res[1];
+           $start = $res[0];
+       }
+    }
+
+    if($max>1){
+        $max_str = substr($s,$start,$max);
+    }
+
+    if($max == 0){
+        $max_str = $s[0];
+    }
+
+    echo ">>>>>>>>>>res====={$max_str}";
+}
 
 test($s);
